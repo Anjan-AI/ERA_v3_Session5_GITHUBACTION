@@ -1,32 +1,33 @@
+    
 # MNIST CNN Model with CI/CD Pipeline
 
 This project implements a CNN model for MNIST digit classification with a complete CI/CD pipeline.
 
-mnist_pipeline/
-│
-├── .github/
-│ └── workflows/
-│ └── ml_pipeline.yml # GitHub Actions workflow configuration
-│
-├── src/
-│ ├── init.py # Makes src a Python package
-│ ├── model.py # CNN model architecture
-│ ├── train.py # Training script
-│ └── utils.py # Utility functions
-│
-├── tests/
-│ ├── init.py # Makes tests a Python package
-│ ├── test_model.py # Model architecture tests
-│ └── test_training.py # Training pipeline tests
-│
-├── models/ # Directory for saved models
-│ └── .gitkeep # Keeps empty models directory in git
-│
-├── .gitignore # Specifies which files Git should ignore
-├── requirements.txt # Project dependencies for GPU development
-├── requirements-cpu.txt # Project dependencies for CPU-only execution
-├── setup.py # Package installation configuration
-└── README.md # Project documentation
+    mnist_pipeline/
+    │
+    ├── .github/
+    │ └── workflows/
+    │ └── ml_pipeline.yml # GitHub Actions workflow configuration
+    │
+    ├── src/
+    │ ├── init.py # Makes src a Python package
+    │ ├── model.py # CNN model architecture
+    │ ├── train.py # Training script
+    │ └── utils.py # Utility functions
+    │
+    ├── tests/
+    │ ├── init.py # Makes tests a Python package
+    │ ├── test_model.py # Model architecture tests
+    │ └── test_training.py # Training pipeline tests
+    │
+    ├── models/ # Directory for saved models
+    │ └── .gitkeep # Keeps empty models directory in git
+    │
+    ├── .gitignore # Specifies which files Git should ignore
+    ├── requirements.txt # Project dependencies for GPU development
+    ├── requirements-cpu.txt # Project dependencies for CPU-only execution
+    ├── setup.py # Package installation configuration
+    └── README.md # Project documentation
 
 ## Requirements
 - Python 3.8+
