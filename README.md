@@ -2,10 +2,8 @@
 
 This project implements a CNN model for MNIST digit classification with a complete CI/CD pipeline.
 
-## Project Structure 
-
-tree
 mnist_pipeline/
+│
 ├── .github/
 │ └── workflows/
 │ └── ml_pipeline.yml # GitHub Actions workflow configuration
@@ -21,8 +19,8 @@ mnist_pipeline/
 │ ├── test_model.py # Model architecture tests
 │ └── test_training.py # Training pipeline tests
 │
-├── models/ # Directory for saved models (created during training)
-│ └── .gitkeep
+├── models/ # Directory for saved models
+│ └── .gitkeep # Keeps empty models directory in git
 │
 ├── .gitignore # Specifies which files Git should ignore
 ├── requirements.txt # Project dependencies for GPU development
