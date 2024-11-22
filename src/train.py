@@ -14,7 +14,9 @@ from src.model import MnistCNN
 from src.utils import count_parameters, save_model
 
 def train_model(epochs=1, batch_size=8):
-    device = torch.device('cpu')
+    # Use CUDA only if available and not in CI environment
+    device = torch.device('cuda' if torch.cuda.is_available() and not os.getenv('CI') else 'cpu')
+    print(f"Using device: {device}")
     
     transform = transforms.Compose([
         transforms.ToTensor(),
@@ -26,7 +28,10 @@ def train_model(epochs=1, batch_size=8):
                                              transform=transform,
                                              download=True)
 
-    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+    train_loader = DataLoader(train_dataset, 
+                            batch_size=batch_size, 
+                            shuffle=True,
+                            num_workers=0)  # Set to 0 for GitHub Actions
 
     model = MnistCNN().to(device)
     criterion = nn.CrossEntropyLoss()
